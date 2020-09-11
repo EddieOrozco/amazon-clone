@@ -6,7 +6,17 @@ function App() {
   return (
     <Router>
       <div className='app'>
-        <h1>Amazon</h1>
+        <Switch>
+          <Route path='/checkout'>
+            <h1>Checkout</h1>
+          </Route>
+          <Route path='/login'>
+            <h1>Login page</h1>
+          </Route>
+          <Route path='/'>
+            <h1>Home Page!!!</h1>
+          </Route>
+        </Switch>
       </div>
     </Router>
   );
