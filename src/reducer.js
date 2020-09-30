@@ -17,7 +17,11 @@ export const initialState = {
         '//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.framesdirect.com%2Fproduct_elarge_images%2Frayban-sun-rb8301-002-56-angle.jpg&f=1&nofb=1',
     },
   ],
+  user: null,
 };
+
+export const getBasketTotal = (basket) =>
+  basket?.reduce((amount, item) => item.price + amount, 0);
 
 function reducer(state, action) {
   console.log(action);
