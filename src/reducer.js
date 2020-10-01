@@ -1,22 +1,5 @@
 export const initialState = {
-  basket: [
-    {
-      id: '5',
-      title: 'Forget the sun stay fresh and cool.',
-      price: 105.99,
-      rating: 5,
-      image:
-        '//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.framesdirect.com%2Fproduct_elarge_images%2Frayban-sun-rb8301-002-56-angle.jpg&f=1&nofb=1',
-    },
-    {
-      id: '5',
-      title: 'Forget the sun stay fresh and cool.',
-      price: 105.99,
-      rating: 5,
-      image:
-        '//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.framesdirect.com%2Fproduct_elarge_images%2Frayban-sun-rb8301-002-56-angle.jpg&f=1&nofb=1',
-    },
-  ],
+  basket: [],
   user: null,
 };
 
@@ -26,6 +9,11 @@ export const getBasketTotal = (basket) =>
 function reducer(state, action) {
   console.log(action);
   switch (action.type) {
+    case 'SET_USER':
+      return {
+        ...state,
+        user: action.user,
+      };
     case 'ADD_TO_BASKET':
       // Logic for Adding item to basket
       return { ...state, basket: [...state.basket, action.item] };
